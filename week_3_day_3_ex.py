@@ -3,7 +3,19 @@
 
 places = [" ","Argentina", " ", "San Diego","","  ","","Boston","New York"]
 
-print(list(filter(lambda place: True if place != " " else False, places)))
+def filter_s(places):
+    if places.strip():
+        return True
+    else:
+        return False
+
+new_list = list(filter(filter_s, places))
+print(new_list)
+
+
+# places = [" ","Argentina", " ", "San Diego","","  ","","Boston","New York"]
+
+# print(list(filter(lambda place: True if place != " " else False, places)))
 
 # places = [" ","Argentina", " ", "San Diego","","  ","","Boston","New York"]
 
@@ -41,10 +53,23 @@ print(list(map(lambda x : (x[0], (9/5) * x[1] + 32), places)))
 # Exercise 4
 # Write a recursion function to perform the fibonacci sequence up to the number passed in.
 
-def recursive_fib_s(num):
-    if num <= 1:
-        print(f'Iteration({num}) = 1')
-        return num
-    return recursive_fib_s(num - 1) + recursive_fib_s(num - 2)
+# def recursive_fib_s(num):
+#     if num <= 1:
+#         print(f'Iteration({num}) = 1')
+#         return num
+#     return recursive_fib_s(num - 1) + recursive_fib_s(num - 2)
 
-print(recursive_fib_s(5))
+# print(recursive_fib_s(5))
+
+
+def fib(n):
+    if n <= 1:
+        return 1
+    return fib(n-1) + fib(n-2)
+
+print(fib(0))
+print(fib(1))
+print(fib(2))
+print(fib(3))
+print(fib(4))
+print(fib(5))
